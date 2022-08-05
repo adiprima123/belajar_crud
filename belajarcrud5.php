@@ -41,35 +41,24 @@ while($d = mysqli_fetch_array($data)) {
 <br/>
 <br/>
 <h3>ADMIN</h3>
-<a href= "tambah.php">tambah data</a>
 <br/>
 <br/>
 <table border="2">
     <tr>
         <th>no</th>
+        <th>id admin</th>
         <th>username</th>
-        <th>password</th>
-
     </tr>
 
 <?php
-//belajar koneksi database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "db_perpusweb";
-
-//membuat koneksi
-$connect = mysqli_connect($servername,$username,$password,$database);
-
 $no= 1;
 $data = mysqli_query($connect,"SELECT * FROM admin");
 while($d = mysqli_fetch_array($data)) {
 ?>
 <tr>
     <td><?php echo $no++ ?></td>
+    <td><?php echo $d['id_admin']; ?></td>
     <td><?php echo $d['username']; ?></td>
-    <td><?php echo $d['password']; ?></td>
     <var_dump($d)?>
 </tr>
 <?php
@@ -84,7 +73,6 @@ while($d = mysqli_fetch_array($data)) {
 <br/>
 <br/>
 <h3>BOOK</h3>
-<a href= "tambah.php">tambah data</a>
 <br/>
 <br/>
 <table border="2">
@@ -99,15 +87,6 @@ while($d = mysqli_fetch_array($data)) {
     </tr>
 
 <?php
-//belajar koneksi database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "db_perpusweb";
-
-//membuat koneksi
-$connect = mysqli_connect($servername,$username,$password,$database);
-
 $no= 1;
 $data = mysqli_query($connect,"SELECT * FROM book");
 while($d = mysqli_fetch_array($data)) {
